@@ -78,5 +78,5 @@ function scrollToServices() {
   
   function redirectToHome() {
     // Redirect to the 'index.html' page
-    window.location.href = 'index2.html';
+    window.location.href = 'index.html';
   }
