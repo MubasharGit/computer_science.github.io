@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="home-section">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo">
+            </a>
+
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item" id="home" style="border-left: 1px solid red; border-right: 1px solid red;">
+                        <a class="nav-link active" href="#" >Home</a>
+                    </li>
+                    <li class="nav-item" style="border-left: 1px solid red; border-right: 1px solid red;">
+                        <a class="nav-link" href="javascript:void(0);" onclick="redirectToAbout()" >About Us</a>
+                    </li>
+                    <li class="nav-item" style="border-left: 1px solid red; border-right: 1px solid red;">
+                        <a class="nav-link " href="javascript:void(0);" onclick="redirectToServices()" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Services
+                        </a>
+                     
+                    </li>
+                    <li class="nav-item" style="border-left: 1px solid red; border-right: 1px solid red;">
+                        <a class="nav-link"  href="javascript:void(0);" onclick="redirectToProjects()">Our Projects</a>
+                    </li>
+                    <li class="nav-item" style="border-left: 1px solid red; border-right: 1px solid red;">
+                        <a class="nav-link" href="javascript:void(0);" onclick="redirectToContact()">Contact Us</a>
+                    </li>
+                </ul>
+                <!-- Get Started Button -->
+                <a href="javascript:void(0);" onclick="scrollToServices()" class="btn btn-primary ms-3">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('slide1.jpg');">
+                <div class="carousel-caption">
+                    <h1 >Welcome to Our Website</h1>
+                    <h1>COMPUTER SCIENCE DEPARTMENT</h1>
+                    <p style="color: rgb(255, 255, 255);">The Computer Science Department is at the forefront of innovation, providing a comprehensive education that blends theory with practical skills.</p>
+                    <a href="javascript:void(0);" onclick="scrollToServices()" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('slide2.jpg');">
+                <div class="carousel-caption">
+                    <h1>Explore Our Services</h1>
+                    <p>Our curriculum is designed to equip students with the knowledge and expertise to excel in the rapidly evolving tech industry.<br>Get started with us today!</p>
+                    <a href="javascript:void(0);" onclick="redirectToServices()" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('slide3.png');">
+                <div class="carousel-caption">
+                    <h1>Join Our Community</h1>
+                    <p>Become a part of our growing community.<br>Let’s achieve greatness together.</p>
+                    <a href="javascript:void(0);" onclick="redirectToContact()" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+
+    <section class="about-section py-5" id="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Side: Tabs -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-heading mb-4" style="color: rgb(255, 230, 0);">About Us</h2>
+                    <ul class="nav nav-tabs mb-3" id="aboutTabs" role="tablist" style="font-size: 20px; ">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button" role="tab" aria-controls="company" aria-selected="true">
+                                Our Company
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button  class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button" role="tab" aria-controls="mission" aria-selected="false">
+                                Our Mission
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab" aria-controls="vision" aria-selected="false">
+                                Our Vision
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content text-light" id="aboutTabContent">
+                        <div class="tab-pane fade show active" id="company" role="tabpanel" aria-labelledby="company-tab">
+                            <h3 style="color: rgb(255, 230, 0);">Building Excellence</h3>
+                            <p> Our department is dedicated to cultivating critical thinkers, skilled problem-solvers, and leaders in technology.We are committed to delivering outstanding products and services that exceed expectations.</p>
+                            <a href="javascript:void(0);" onclick="scrollToServices()" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                        <div class="tab-pane fade" id="mission" role="tabpanel" aria-labelledby="mission-tab">
+                            <h3 style="color: rgb(255, 230, 0);">Empowering People</h3>
+                            <p>Our mission is to deliver world-class education in computer science, empowering students with the skills and knowledge to excel in an ever-evolving technological landscape.</p>
+                            <a href="javascript:void(0);" onclick="scrollToServices()" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                        <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+                            <h3 style="color: rgb(255, 230, 0);">Innovating for Tomorrow</h3>
+                            <p>We envision a future where our graduates are at the forefront of technological advancement, shaping industries and creating solutions that drive global change.</p>
+                            <a href="javascript:void(0);" onclick="scrollToServices()" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Right Side: Image -->
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="about.jpg" alt="About Us" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="services-section py-5" id="services-section">
+        <div class="container">
+            <!-- Main Heading and Description -->
+            <div class="text-center mb-5">
+                <h2 class="section-heading" style="color: rgb(255, 230, 0);">Our Services</h2>
+                <p class="section-description">Discover a range of exceptional services designed to cater to your unique needs and drive your success forward with our expertise and dedication.</p>
+            </div>
+    
+            <!-- Services Boxes -->
+            <div class="row">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-box">
+                        <div class="icon mb-3">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h4 style="color: rgb(255, 230, 0);">Academic Programs & Degrees</h4>
+                        <p>Offering undergraduate, graduate, and doctoral programs in computer science, including specialized tracks in areas like AI, cybersecurity, and data science.</p>
+                        <a href="javascript:void(0);" onclick="redirectToServices()" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-box">
+                        <div class="icon mb-3">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h4 style="color: rgb(255, 230, 0);">Research Opportunities</h4>
+                        <p>Providing students and faculty with resources to engage in cutting-edge research in areas such as machine learning, software engineering, blockchain, and cloud computing.</p>
+                        <a href="javascript:void(0);" onclick="redirectToServices()" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-box">
+                        <div class="icon mb-3">
+                            <i class="bi bi-bar-chart"></i>
+                        </div>
+                        <h4 style="color: rgb(255, 230, 0);">Internship & Career Placement Services</h4>
+                        <p>Helping students connect with industry partners for internships and full-time positions, providing career counseling and networking opportunities with top tech companies.</p>
+                        <a href="javascript:void(0);" onclick="redirectToServices()" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-box">
+                        <div class="icon mb-3">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4 style="color: rgb(255, 230, 0);">Workshops & Training Programs</h4>
+                        <p>Offering skill-building workshops, coding boot camps, and specialized courses to enhance students’ technical skills and keep them updated on emerging technologies.</p>
+                        <a href="javascript:void(0);" onclick="redirectToServices()" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-box">
+                        <div class="icon mb-3">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4 style="color: rgb(255, 230, 0);">Collaborative Projects & Hackathons</h4>
+                        <p>Organizing collaborative projects, hackathons, and competitions where students can apply their skills in real-world problem-solving and innovation.</p>
+                        <a href="javascript:void(0);" onclick="redirectToServices()" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-box">
+                        <div class="icon mb-3">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h4 style="color: rgb(255, 230, 0);">Technical Support & Resources</h4>
+                        <p>Providing access to state-of-the-art computing labs, software tools, cloud resources, and technical support to enhance the learning experience for students and faculty.</p>
+                        <a href="javascript:void(0);" onclick="redirectToServices()" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    
+
+    <section class="projects-section py-5" id="projects-section">
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="text-center mb-5">
+                <h2 class="section-heading" style="color: rgb(255, 230, 0);">Our Projects</h2>
+                <p class="section-description" style="font-size: 25px;">Discover some of our amazing work in various fields, including apps, product designs.</p>
+            </div>
+    
+            <!-- Tabs -->
+          
+    
+            <!-- Tab Content -->
+            <div class="tab-content" id="projectTabsContent">
+                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                    <div class="row gy-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="project-card">
+                                <img src="project1.jpeg" alt="Project 1" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h2 style="color: rgb(255, 230, 0);">Web Development</h2>
+                                        <p>Building a fully functional E-commerce , Content Management System , Portfolio Websites.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="project-card">
+                                <img src="project2.jpg" alt="Project 2" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h2 style="color: rgb(255, 230, 0);">App Development</h2>
+                                        <p>Building a fully functional Location-Based Services , Companies , Organization's APPS.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="project-card">
+                                <img src="project3.jpg" alt="Project 3" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h2 style="color: rgb(255, 230, 0);">Artificial Intelligence and Machine Learning </h2>
+                                        <p>Category: AI</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="project-card">
+                                <img src="project4.jpg" alt="Project 4" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h2 style="color: rgb(255, 230, 0);">Cybersecurity</h2>
+                                        <p>Developing an encrypted file-sharing system to ensure privacy and data protection.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="project-card">
+                                <img src="project5.jpeg" alt="Project 5" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h2 style="color: rgb(255, 230, 0);">Game Development </h2>
+                                        <p>Designing an AR-based game that interacts with the real world through a mobile device camera.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="project-card">
+                                <img src="project6.jpg" alt="Project 6" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="overlay-content">
+                                        <h2 style="color: rgb(255, 230, 0);"> Robotics</h2>
+                                        <p>Developing a robotic arm controlled by a computer or via sensors to carry out specific tasks.  </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Add similar rows for other tabs -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="contact-section" class="contact-section py-5 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <h2 class="section-heading text-center mb-4" style="color: rgb(255, 230, 0);">Contact Us</h2>
+                    <p class="text-center mb-5">We'd love to hear from you! Please fill out the form below, and we'll get back to you shortly.</p>
+                    
+                    <!-- Contact Form -->
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+    
+                <!-- Google Map -->
+                <div class="col-lg-6">
+                    <h2 class="section-heading text-center mb-4" style="color: rgb(255, 230, 0);">Our Location</h2>
+                    <div class="map-container">
+                        <!-- Embed Google Map -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.051973243712!2d-122.40145438468165!3d37.79222277975841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c3fe25df9%3A0xaaa62b05a38a91d1!2sSalesforce%20Tower!5e0!3m2!1sen!2sus!4v1600000000000" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+
+
+    
+    <footer>
+        <ul class="footer-links">
+          <li><a href="javascript:void(0);" onclick="scrollToHome()"  >Home</a></li>
+          <li><a href="javascript:void(0);" onclick="scrollToAbout() " >About</a></li>
+          <li> <a href="javascript:void(0);" onclick="scrollToServices()" >Our Services</a></li>
+          <li><a href="javascript:void(0);" onclick="scrollToProjects()">Projects</a></li>
+          <li><a href="javascript:void(0);" onclick="scrollToContact()">Contact Us</a></li>
+        </ul>
+    
+        <div class="social-icons">
+          <a href="https://twitter.com/bzuniversity" target="_blank">Twitter</a>
+          <a href="https://www.facebook.com/csdeptbzu/" target="_blank">Facebook</a>
+          <a href="https://www.youtube.com/@bzu-pakistan" target="_blank">YouTube</a>
+          <a href="https://www.instagram.com/explore/locations/513311794/department-of-computer-science-bzu/" target="_blank">Instagram</a>
+        </div>
+    
+        <div class="footer-text">
+          <p>We use cookies to provide the best experience on our website. By using our site, you agree to the collection and use of data. <a href="#" style="color: #4caf50;">Learn more</a></p>
+        </div>
+    
+        <div class="footer-bottom">
+          <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+          <a href="#top" class="back-to-top">Back to Top</a>
+        </div>
+      </footer>
+    
+    
+    <!-- Font Awesome Icons (for social media) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
